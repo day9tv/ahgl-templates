@@ -1,0 +1,21 @@
+@import "compass";
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 990px;
+}
+
+ul, li {
+    @include no-bullets;
+    margin: 0;
+    padding: 0;
+}
+
+.game-navigation {
+    li { text-align: right; }
+}
