@@ -3,20 +3,24 @@ layout: default
 ---
 
 <div class="wrapper">
-  <div class="logo sx1">Day9</div>
-  <nav class="sx2-sx6">
-    <ul class="game-switcher sx-hide">
-      <li class="active"><a href="">StarCraft II</a></li>
-      <li><a href="">League of Legends</a></li>
-    </ul>
+  <nav class="">
+    <div class="current-game">
+      <span class="">StarCraft II</span>
+      <ul class="game-switcher">
+        <li><a href="">StarCraft II</a></li>
+        <li><a href="">League of Legends</a></li>
+      </ul>
+    </div>
     <ul class="game-navigation">
-      <li class="e5"><a href="">Teams</a></li>
-      <li class="e6"><a href="">Schedule</a></li>
-      <li class="e7"><a href="">Videos</a></li>
-      <li class="e8"><a href="">Standings</a></li>
+      <li class=""><a href="index.html">Home</a></li>
+      <li class=""><a href="teams.html">Teams</a></li>
+      <li class=""><a href="schedule.html">Schedule</a></li>
+      <li class=""><a href="videos.html">Videos</a></li>
+      <li class=""><a href="standings.html">Standings</a></li>
     </ul>
   </nav>
 </div>
 
 <section>
+  {{ content }}
 </section>
