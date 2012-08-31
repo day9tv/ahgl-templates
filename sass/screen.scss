@@ -23,3 +23,16 @@ ul, li {
 .game-navigation {
     li { text-align: right; }
 }
+
+body > header {
+    background: #fff;
+}
+
+nav > ul {
+}
+
+body > header h1 {
+    font-size: 14px;
+
+    span { font-weight: normal; }
+}
