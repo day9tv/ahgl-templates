@@ -5,19 +5,20 @@ require "stringex"
 # Configuration variables.
 public_dir = "public"
 source_dir = "source"
+stylesheet_dir = "stylesheets"
 server_port = "4000"
 
 desc "Generate site."
 task :generate do
   puts "## Generating site with Jekyll."
-  system "compass --compile --css-dir #{source_dir}/stylesheets"
+  system "compass --compile --css-dir #{stylesheet_dir}"
   system "jekyll"
 end
 
 desc "Watch the site and regenerate it when changes are made."
 task :watch do
     puts "Starting to watch source with Jekyll and Compass."
-    system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
+    system "compass compile --css-dir #{stylesheet_dir}" unless File.exist?("#{stylesheet_dir}/screen.css")
     jekyllPid = Process.spawn("jekyll --auto")
     compassPid = Process.spawn("compass watch")
 
@@ -32,7 +33,7 @@ end
 desc "Preview the site in a browser."
 task :preview do
   puts "Starting to watch source with Jekyll and Compass. Starting Rack on port #{server_port}."
-  system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
+  system "compass compile --css-dir #{stylesheet_dir}" unless File.exist?("#{stylesheet_dir}/screen.css")
   jekyllPid = Process.spawn("jekyll --auto")
   compassPid = Process.spawn("compass watch")
   rackupPid = Process.spawn("rackup --port #{server_port}")
