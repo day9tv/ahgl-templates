@@ -5,6 +5,18 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+body {
+    background-color: #111;
+    color: #fff;
+}
+
+
+a {
+    @include link-colors(#fff);
+    text-decoration: none;
+}
+
+
 .wrapper {
     margin: 0 auto;
     width: 990px;
@@ -21,18 +33,23 @@ ul, li {
 }
 
 .game-navigation {
-    li { text-align: right; }
+    li {
+        font-size: 13px;
+        font-weight: bold;
+        text-align: right;
+        text-transform: uppercase;
+    }
 }
 
 body > header {
+    color: #333;
     background: #fff;
+    font-size: 13px;
 }
 
 nav > ul {
 }
 
 body > header h1 {
-    font-size: 14px;
-
     span { font-weight: normal; }
 }
