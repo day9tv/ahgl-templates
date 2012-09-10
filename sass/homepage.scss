@@ -25,7 +25,7 @@ a {
 }
 
 
-body > header {
+body > .header {
     color: #333;
     background: #fff url('../images/logo-ahgl-small-gray.png') no-repeat 50% 50%;
     font-size: 13px;
@@ -105,7 +105,7 @@ body > footer {
 }
 
 .content { padding-bottom: 64px; }
-.content header {
+.content .header {
     border-top: 1px solid rgba(#fff, 0.1);
     color: #fff;
     text-align: center;
@@ -209,7 +209,7 @@ body > footer {
     }
 }
 
-.content footer {
+.content .footer {
     margin-top: 20px;
 }
 .blog-link {
@@ -261,8 +261,7 @@ body > footer {
 
 // Colors.
 body { background: #0c0c0c; }
-body > header:before { background: $day9; }
-
+body > .header:before { background: $day9; }
 body > footer {
     color: #fff;
 
@@ -285,7 +284,6 @@ body > footer {
 .wf-loading * {
     opacity: 0;
 }
-
 * {
     @include single-transition(opacity, 0.30s, ease-in-out);
     opacity: 1;
