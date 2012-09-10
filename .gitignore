@@ -2,6 +2,4 @@
 .DS_Store
 .sass-cache
 
-source/_stash
-source/stylesheets
-public
+_site
