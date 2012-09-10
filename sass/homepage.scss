@@ -1,0 +1,76 @@
+@import "compass";
+
+
+.hide-text {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+body {
+    background: #111;
+}
+
+body > header {
+    color: #333;
+    background: #fff;
+    font-size: 13px;
+
+    &:before {
+        content: '';
+
+        position: absolute;
+        width: 100%; height: 6px;
+    }
+}
+
+
+
+.wrapper {
+    margin: 0 auto;
+    width: 990px;
+}
+
+.game {
+    background: #fff;
+
+    position: relative;
+
+    &:before {
+        content: '';
+
+        position: absolute;
+        width: 80%; height: 6px;
+    }
+    h1 {
+        @extend .hide-text;
+        background-color: #ccc;
+
+        position: relative;
+        height: 276px;
+        margin: 0;
+
+        &:after {
+            background: rgba(#000, 0.8);
+            content: '';
+
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 100%; height: 90px;
+        }
+    }
+
+}
+
+body > header:before { background: #ffa71a; }
+
+#sc2 {
+    &:before {
+        background: #5ebce6;
+    }
+}
+#lol {
+    &:before {
+        background: #e76658;
+    }
+}
