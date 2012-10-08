@@ -1,5 +1,12 @@
 @import "compass";
 
+$default-transition-duration: 250ms;
+$default-transition-function: ease-in-out;
+
+$day9: #ffa71a;
+$sc2: #5ebce6;
+$lol: #e76658;
+
 // body {
 //     text-rendering: optimizeLegibility;
 //     -webkit-font-smoothing: antialiased;
@@ -28,16 +35,39 @@ ul, li {
     padding: 0;
 }
 
+.game-nav {
+    // @include background-image(linear-gradient($sc2, darken($sc2, 20%)));
+    background-color: $sc2;
+    border-radius: 2px;
+
+    margin-top: 20px;
+}
+
+.current-game {
+    color: #fff;
+    margin: 10px;
+    font-size: 14px;
+}
+
 .game-switcher {
     display: none;
 }
 
 .game-navigation {
     li {
-        font-size: 13px;
-        font-weight: bold;
-        text-align: right;
-        text-transform: uppercase;
+
+        a {
+            border-left: 1px solid rgba(white, 0.2);
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 37px;
+            text-align: left;
+            text-transform: uppercase;
+            text-indent: 10px;
+
+            display: block;
+        }
     }
 }
 
@@ -55,14 +85,6 @@ ul, li {
 // }
 
 
-@import "compass";
-
-$default-transition-duration: 250ms;
-$default-transition-function: ease-in-out;
-
-$day9: #ffa71a;
-$sc2: #5ebce6;
-$lol: #e76658;
 
 body {
     font-family: "proxima-nova-alt", sans-serif;
