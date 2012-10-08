@@ -1,26 +1,26 @@
 @import "compass";
 
-body {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-}
+// body {
+//     text-rendering: optimizeLegibility;
+//     -webkit-font-smoothing: antialiased;
+// }
 
-body {
-    background-color: #111;
-    color: #fff;
-}
-
-
-a {
-    @include link-colors(#fff);
-    text-decoration: none;
-}
+// body {
+//     background-color: #111;
+//     color: #fff;
+// }
 
 
-.wrapper {
-    margin: 0 auto;
-    width: 990px;
-}
+// a {
+//     @include link-colors(#fff);
+//     text-decoration: none;
+// }
+
+
+// .wrapper {
+//     margin: 0 auto;
+//     width: 990px;
+// }
 
 ul, li {
     @include no-bullets;
@@ -41,15 +41,322 @@ ul, li {
     }
 }
 
-body > header {
+// body > header {
+//     color: #333;
+//     background: #fff;
+//     font-size: 13px;
+// }
+
+// nav > ul {
+// }
+
+// body > header h1 {
+//     span { font-weight: normal; }
+// }
+
+
+@import "compass";
+
+$default-transition-duration: 250ms;
+$default-transition-function: ease-in-out;
+
+$day9: #ffa71a;
+$sc2: #5ebce6;
+$lol: #e76658;
+
+body {
+    font-family: "proxima-nova-alt", sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    @include single-transition();
+    text-decoration: none;
+}
+
+.hide-text {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+
+body > .header {
+    background-color: #fff;
     color: #333;
-    background: #fff;
     font-size: 13px;
+
+    position: relative;
+    height: 106px;
+
+    &:before {
+        content: '';
+
+        position: absolute;
+        width: 100%; height: 6px;
+    }
+    .wrapper {
+        background: #fff url('../images/logo-ahgl-small-gray.png') no-repeat 0% 50%;
+        height: 100%;
+    }
+    h1 {
+        color: rgba($day9, 0.5);
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 18px;
+        text-transform: uppercase;
+
+        position: relative;
+        margin-top: 0; margin-bottom: 0;
+        top: 37px; left: 45px;
+
+        strong { color: $day9; }
+    }
+    .byline {
+        color: #ccc;
+        display: block;
+        font-size: 12px;
+    }
+    ul { margin: 0; }
+}
+body > footer {
+    font-size: 12px;
+    margin-bottom: 24px;
+
+    a {
+        color: #fff;
+        font-weight: bold;
+
+        &:hover { color: $day9; }
+    }
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        li {
+            display: inline-block;
+            padding: 0 12px 6px;
+        }
+        .day9tv {
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    nav {
+        border-top: 1px solid rgba(#fff, 0.1);
+        margin-top: 24px; padding-top: 12px;
+
+        ul { margin: 0; padding: 0; }
+        li {
+            text-align: center;
+            text-transform: uppercase;
+
+            display: table-cell;
+            margin: 0; padding: 0;
+            width: 1%;
+        }
+    }
+
+    .copyright { text-align: center; }
+    .sponsors {
+        font-size: 14px;
+        text-align: center;
+        padding-top: 24px;
+    }
 }
 
-nav > ul {
+.wrapper {
+    margin: 0 auto;
+    width: 990px;
 }
 
-body > header h1 {
-    span { font-weight: normal; }
+.content { padding-bottom: 64px; }
+.content .header {
+    border-top: 1px solid rgba(#fff, 0.1);
+    color: #fff;
+    text-align: center;
+
+    margin-top: 36px;
+    margin-bottom: 36px;
+
+    h1 {
+        color: #fff;
+        font-size: 31px;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+    h1 span {
+        color: $day9;
+        font-weight: normal;
+    }
+    p {
+        color: rgba(#fff, 0.3);
+        text-transform: uppercase;
+
+        margin: 0;
+    }
 }
+
+.game {
+    @include single-transition(box-shadow);
+    @include box-shadow(0 0 0 3px rgba($sc2, 0.0));
+    background: #fff;
+
+    position: relative;
+
+    &:before {
+        content: '';
+
+        position: absolute;
+        width: 100%; height: 6px;
+        z-index: 100;
+    }
+    h1 {
+        @extend .hide-text;
+        background-color: #ccc;
+
+        position: relative;
+        height: 276px;
+        margin: 0;
+
+        &:after {
+            background: rgba(#000, 0.8);
+            content: '';
+
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 100%; height: 90px;
+        }
+        .logo {
+            background-color: #fff;
+            width: 100px; height: 100px;
+            position: absolute;
+            display: block;
+        }
+    }
+}
+.actions {
+    @include no-bullets;
+    margin: 0; padding: 0;
+
+    li {
+        @include single-transition();
+        border-bottom: 1px solid rgba(#000, 0.1);
+        font-size: 16px;
+
+        position: relative;
+
+        &::before {
+            background-position: 16px 16px;
+            background-repeat: no-repeat;
+            content: '';
+
+            width: 16px; height: 16px;
+            position: absolute;
+            padding: 16px;
+            top: 0; left: 0;
+            overflow: hidden;
+        }
+        &:hover a { color: #fff; }
+        &:last-child { border: none; }
+        &.register::before { background-image: url('../images/icon-register.png'); }
+        &.register:hover::before { background-position: 16px -16px; }
+        &.history::before { background-image: url('../images/icon-history.png'); }
+        &.history:hover::before { background-position: 16px -16px; }
+
+        a {
+            color: rgba(#000, 0.5);
+            display: block;
+            padding: 15px 16px 14px 40px;
+        }
+    }
+}
+
+.content .footer {
+    margin-top: 20px;
+}
+.blog-link {
+    @include box-shadow(0 0 0 3px rgba($day9, 0.0));
+    background: #fff url('../images/icon-blog.png') no-repeat;
+    background-position: 16px 16px;
+    color: rgba(#000, 0.5);
+
+    display: block;
+    padding: 15px 16px 14px 40px;
+
+    &:hover {
+        @include box-shadow(0 0 0 3px rgba($day9, 0.5));
+        background-color: $day9;
+        background-position: 16px -16px;
+        color: #fff;
+    }
+}
+
+#sc2 {
+    h1 {
+        background-image: url('../images/landing-kerrigan.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 125%;
+    }
+    .logo {
+        background: url('../images/logo-sc2.png') center no-repeat;
+        width: 100%; height: 115px;
+        bottom: 5px;
+        z-index: 50;
+    }
+}
+#lol {
+    h1 {
+        background-image: url('../images/landing-lol.png');
+        background-position: 50% 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .logo {
+        background: url('../images/logo-lol.png') center no-repeat;
+        width: 100%; height: 88px;
+        bottom: 17px;
+        z-index: 50;
+    }
+}
+
+
+// Colors.
+body { background: #0c0c0c; }
+body > .header:before { background: $day9; }
+body > footer {
+    color: #fff;
+
+    .copyright { color: rgba(#fff, 0.5); }
+}
+
+
+.content { background-color: #111; }
+
+#sc2 {
+    &::before, li:hover { background-color: $sc2; }
+    &:hover { @include box-shadow(0 0 0 3px rgba($sc2, 0.5)); }
+}
+#lol {
+    &::before, li:hover { background-color: $lol; }
+    &:hover { @include box-shadow(0 0 0 3px rgba($lol, 0.5)); }
+}
+
+
+// .wf-loading * {
+//     opacity: 0;
+// }
+// * {
+//     @include single-transition(opacity, 0.30s, ease-in-out);
+//     opacity: 1;
+//     visibility: visible; /* Old IE */
+// }
+
+

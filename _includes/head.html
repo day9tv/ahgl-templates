@@ -8,7 +8,7 @@
 
     <link href="/stylesheets/normalize.css" rel="stylesheet">
     <link href="/stylesheets/gridset.css" rel="stylesheet">
-    <link href="/stylesheets/homepage.css" rel="stylesheet">
+    <link href="/stylesheets/{% if page.type == "home" %}homepage{% else %}screen{% endif %}.css" rel="stylesheet">
 
     <script src="//use.typekit.net/xpm8wvd.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
