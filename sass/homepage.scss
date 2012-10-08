@@ -281,11 +281,11 @@ body > footer {
 }
 
 
-.wf-loading * {
-    opacity: 0;
-}
-* {
-    @include single-transition(opacity, 0.30s, ease-in-out);
-    opacity: 1;
-    visibility: visible; /* Old IE */
-}
+// .wf-loading * {
+//     opacity: 0;
+// }
+// * {
+//     @include single-transition(opacity, 0.30s, ease-in-out);
+//     opacity: 1;
+//     visibility: visible; /* Old IE */
+// }

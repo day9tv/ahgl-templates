@@ -1,58 +1,10 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="viewport" content="width=device-width">
-
-    <link href="/stylesheets/normalize.css" rel="stylesheet">
-    <link href="/stylesheets/screen.css" rel="stylesheet">
-    <link href="https://get.gridsetapp.com/9194/" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="wrapper">
-            <h1>After Hours Gaming League <span>Season Three</span></h1>
-            <div class="byline">Presented by Day9</div>
-            <nav class="meta-navigation sx-hide">
-                <ul>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Press</a></li>
-                </ul>
-            </nav>
-            <nav class="user-navigation">
-                <ul>
-                    <li><a href="">Sign Up</a></li>
-                    <li><a href="">Log In</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="content">
-    {{ content }}
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+<body id="afterhoursgamingleague-tv" {% if page.class %}class="{{ page.class }}"{% endif %}>
+{% include header.html %}
+    <section>
+        {{ content }}
     </section>
-
-    <footer>
-        <div class="wrapper">
-            <nav>
-                <ul>
-                    <li><a href="">Past Seasons</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Press</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">Disclaimer</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="copyright">
-                <p>&copy;2012 Jink.tv. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://get.gridsetapp.com/9194/overlay/"></script>
-    <script src="//use.typekit.net/xpm8wvd.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+{% include footer.html %}
 </body>
 </html>
